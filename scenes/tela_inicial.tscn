@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://ml47osruq6se"]
+
+[ext_resource type="Script" uid="uid://bccwp23rwymgu" path="res://scripts/tela_inicial.gd" id="1_hkbxb"]
+
+[node name="TelaInicial" type="Control" unique_id=1335999008]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hkbxb")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=890046900]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.28295636, 0.4949991, 0.99643105, 1)
+
+[node name="BotaoJogar" type="Button" parent="ColorRect" unique_id=603203287]
+layout_mode = 0
+offset_left = 490.0
+offset_top = 380.0
+offset_right = 690.0
+offset_bottom = 440.0
+text = "JOGAR"
+
+[node name="BotaoComoJogar" type="Button" parent="ColorRect/BotaoJogar" unique_id=1715333345]
+layout_mode = 0
+offset_left = -252.0
+offset_top = -22.0
+offset_right = -193.0
+offset_bottom = 77.0
+
+[node name="BotaoRanking" type="Button" parent="ColorRect" unique_id=947151354]
+layout_mode = 0
+offset_left = 490.0
+offset_top = 460.0
+offset_right = 690.0
+offset_bottom = 520.0
+text = "RANKING"
+
+[node name="Label" type="Label" parent="." unique_id=1073067694]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.016
+anchor_bottom = 0.016
+offset_left = 400.0
+offset_top = 150.0
+offset_right = 536.52
+offset_bottom = 161.48
+text = "Cidades Inteligentes"
+
+[connection signal="pressed" from="ColorRect/BotaoJogar" to="." method="_on_botao_jogar_pressed"]
+[connection signal="pressed" from="ColorRect/BotaoJogar/BotaoComoJogar" to="." method="_on_botao_como_jogar_pressed"]
+[connection signal="pressed" from="ColorRect/BotaoRanking" to="." method="_on_botao_ranking_pressed"]

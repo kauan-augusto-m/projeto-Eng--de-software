@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://vaikx2euyvmy"]
+
+[ext_resource type="Script" uid="uid://bnfvs4b3apwts" path="res://scripts/tela_parabens.gd" id="1_0pwh1"]
+[ext_resource type="Texture2D" uid="uid://dg5iii7hiputg" path="res://assets/imagens/FUNDO.png" id="2_wqkef"]
+
+[node name="TelaParabens" type="Control" unique_id=1991157525]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0pwh1")
+
+[node name="parabens" type="Label" parent="." unique_id=121527778]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "PARABÉNS!"
+
+[node name="BotaoProximo" type="Button" parent="parabens" unique_id=841707937]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "PRÓXIMO"
+
+[node name="fundo" type="TextureRect" parent="parabens/BotaoProximo" unique_id=319403809]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("2_wqkef")
+
+[connection signal="pressed" from="parabens/BotaoProximo" to="." method="_on_botao_proximo_pressed"]

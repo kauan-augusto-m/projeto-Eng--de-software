@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://deyooykvowwbp"]
+
+[ext_resource type="Script" uid="uid://d3wanhfjcnpv8" path="res://scripts/tela_login.gd" id="1_u7q5y"]
+
+[node name="TelaLogin" type="Control" unique_id=2018921249]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u7q5y")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1760070733]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="ColorRect" unique_id=748853112]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Digite seu nome:"
+
+[node name="CampoNome" type="LineEdit" parent="ColorRect/Label" unique_id=503339753]
+layout_mode = 0
+offset_right = 68.5
+offset_bottom = 31.0
+
+[node name="BotaoEntrar" type="Button" parent="ColorRect/Label/CampoNome" unique_id=1165547291]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "ENTRAR"
+
+[connection signal="pressed" from="ColorRect/Label/CampoNome/BotaoEntrar" to="." method="_on_botao_entrar_pressed"]

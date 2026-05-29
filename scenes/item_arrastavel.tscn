@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://c6of3mb6bvppd"]
+
+[ext_resource type="Script" uid="uid://bj4kebhsre2xs" path="res://scripts/item_arrastavel.gd" id="1_ghdov"]
+
+[node name="ItemArrastavel" type="Control" unique_id=1948329428]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Imagem" type="TextureRect" parent="." unique_id=509857174]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ghdov")

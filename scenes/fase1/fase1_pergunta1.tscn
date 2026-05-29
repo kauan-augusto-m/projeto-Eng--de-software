@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://b6tdheclde0fg"]
+
+[ext_resource type="Texture2D" uid="uid://dg5iii7hiputg" path="res://assets/imagens/FUNDO.png" id="1_7cebr"]
+[ext_resource type="Script" uid="uid://biwgwkw4dy1qq" path="res://scripts/fase1_pergunta1.gd" id="1_qdvn5"]
+[ext_resource type="Texture2D" uid="uid://drq05dncdiwrr" path="res://assets/imagens/EX1.png" id="2_26yv4"]
+[ext_resource type="PackedScene" uid="uid://c6of3mb6bvppd" path="res://scenes/item_arrastavel.tscn" id="3_utta6"]
+[ext_resource type="Script" uid="uid://bj4kebhsre2xs" path="res://scripts/item_arrastavel.gd" id="4_akje7"]
+[ext_resource type="PackedScene" uid="uid://428lmjksi4e6" path="res://scenes/zona_soltar.tscn" id="4_rdyym"]
+[ext_resource type="Texture2D" uid="uid://dik7l5e5qqpot" path="res://assets/imagens/EX1SOLAR.png" id="5_qdvn5"]
+[ext_resource type="Texture2D" uid="uid://bw1dllx4ruxu0" path="res://assets/imagens/EX1CARVAO.png" id="6_xnehn"]
+
+[node name="Fase1Pergunta1" type="Control" unique_id=1884225313]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qdvn5")
+
+[node name="Fundo" type="TextureRect" parent="." unique_id=1624454373]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("1_7cebr")
+
+[node name="ImagemPergunta" type="TextureRect" parent="." unique_id=493796199]
+layout_mode = 0
+offset_left = 137.0
+offset_top = 48.0
+offset_right = 1098.0
+offset_bottom = 639.0
+texture = ExtResource("2_26yv4")
+
+[node name="ItemSolar" parent="." unique_id=1948329428 instance=ExtResource("3_utta6")]
+layout_mode = 1
+offset_left = 200.0
+offset_top = 380.0
+offset_right = -930.0
+offset_bottom = -190.0
+script = ExtResource("4_akje7")
+id_item = "solar"
+
+[node name="Imagem2" type="TextureRect" parent="ItemSolar" unique_id=990413172]
+layout_mode = 0
+offset_left = 131.0
+offset_top = 104.0
+offset_right = 292.0
+offset_bottom = 244.0
+texture = ExtResource("5_qdvn5")
+stretch_mode = 5
+
+[node name="ItemCarvao" parent="." unique_id=1275728689 instance=ExtResource("3_utta6")]
+layout_mode = 1
+offset_left = 420.0
+offset_top = 380.0
+offset_right = -710.0
+offset_bottom = -190.0
+script = ExtResource("4_akje7")
+id_item = "carvao"
+
+[node name="Imagem_Carvao" type="TextureRect" parent="ItemCarvao" unique_id=966533689]
+layout_mode = 0
+offset_left = 323.0
+offset_top = 111.0
+offset_right = 472.0
+offset_bottom = 247.0
+texture = ExtResource("6_xnehn")
+stretch_mode = 5
+
+[node name="ZonaBom" parent="." unique_id=1948058258 groups=["zona_soltar"] instance=ExtResource("4_rdyym")]
+layout_mode = 1
+offset_left = 202.0
+offset_top = 215.0
+offset_right = -709.0
+offset_bottom = -280.0
+
+[node name="ZonaRuim" parent="." unique_id=1685789993 groups=["zona_soltar"] instance=ExtResource("4_rdyym")]
+layout_mode = 1
+offset_left = 638.0
+offset_top = 212.0
+offset_right = -285.0
+offset_bottom = -280.0
+
+[node name="BotaoConfirmar" type="Button" parent="." unique_id=971099958]
+layout_mode = 0
+offset_left = 1069.0
+offset_top = 652.0
+offset_right = 1269.0
+offset_bottom = 712.0
+text = "CONFIRMAR"
+
+[node name="BotaoVoltar" type="Button" parent="." unique_id=412799001]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 646.0
+offset_right = 185.0
+offset_bottom = 706.0
+text = "VOLTAR"
+
+[connection signal="pressed" from="BotaoConfirmar" to="." method="_on_botao_confirmar_pressed"]
